@@ -1,0 +1,5 @@
+xây dựng class_database
+
+b1. Xây dựng data.php
+1.1 kêt nối
+1.2 viết các phương thức R| CUD
