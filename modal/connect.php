@@ -79,17 +79,17 @@ class database
     {
         $this->connect();
         $result=array();
-        $result = mysqli_query($this->conn, $sql);
-        if (!$result) {
+        $row = mysqli_query($this->conn, $sql);
+        if (!$row) {
             die('câu lệnh bị sai!');
         }
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {      
+        if (mysqli_num_rows($row) > 0) {
+            while ($result = mysqli_fetch_assoc($row)) {      
                 $result[]=$row;
             }
         
         }
-        return $result;
+        return $row;
     }
 }
 

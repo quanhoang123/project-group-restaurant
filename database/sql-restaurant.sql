@@ -130,8 +130,12 @@ insert into products values
 (1011,'Ga Luoc',1,'../img/img-product/galuoc.png','',150000,'2020-03-05',23,1),
 (1012,'Cua Hoang De',1,'../img/img-product/cuahoangde.jpg','',150000,'2020-03-05',23,1),
 (1013,'Ca Mú Hấp',1,'../img/img-product/camuhap.jpg','',700000,'2020-05-11',20,1),
-(1014,'Cá',2,'../img/img-product/car.png','',100000,'2020-05-12',20,1),
-(1015,'Ga Nuong',1,'../img/img-product/ganuong.jpg','',500000,'2020-05-14',40,1);
+(1014,'Cá',2,'../img/img-product/ganuong.jpg','',100000,'2020-05-12',20,1),
+(1015,'Ga Nuong',1,'../img/img-product/ganuong.jpg','',500000,'2020-05-14',40,1),
+(1016,'Ga Nuong',1,'../img/img-product/ganuong.jpg','',500000,'2020-05-14',40,1),
+(1017,'Ga Nuong',1,'../img/img-product/ganuong.jpg','',500000,'2020-05-14',40,1),
+(1018,'Ga Nuong',1,'../img/img-product/ganuong.jpg','',500000,'2020-05-14',40,1),
+(1019,'Ga Nuong',1,'../img/img-product/ganuong.jpg','',500000,'2020-05-14',40,1);
 -- (1016,'TV Sony SX max',14000000,1,'Sản phâm ưu dùng nhất thi trường siêu bền','2020-05-17',2),
 -- (1017,'Sofa',14000000,1,'Ngồi êm hơn cùng sofa','2020-05-19',1),
 -- (1018,'May tinh ASUS',12000000,1,'Thoái mái xem phim lướt fb cùng bạn tình','2020-03-15',4),
