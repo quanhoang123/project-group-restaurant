@@ -15,9 +15,9 @@ CREATE TABLE admin (
 INSERT INTO admin				
 VALUES 	(1, 'mylishop', '8A86E1AAF7327885729E5B450841FEF6'),
 		(2,'trungquanidol','q!uan1211'),
-        (2,'thidiemidol','vingoc1211'),
-        (2,'ngocviidol','d!iem1211'),
-        (2,'hungvuongidol','vuong!1211');
+        (3,'thidiemidol','vingoc1211'),
+        (4,'ngocviidol','d!iem1211'),
+        (5,'hungvuongidol','vuong!1211');
 
 select * from admin;
 -- -----------------------------				
@@ -85,28 +85,6 @@ create table carts(
 -- -----------------------------				
 -- table for carts:				
 -- -----------------------------	
-create table Orders(
-id_order int primary key,
-    id_employee int,
-    id_user int,
-    quantity int ,
-    order_date date,
-    delivery_date date,-- ngày giao hàng
-    id_cart int, -- id giỏ hàng
-    foreign key (id_employee) references employees(id_employee),
-    foreign key (id_user) references users(id_user),
-  -- foreign key (id_cart) references Carts(id_cart),
-	CONSTRAINT Orders unique(id_employee,id_user)
-);  
-insert into Orders values	(000,4,103,5,'2020-03-05','2020-03-16',05),
-							(001,3,101,3,'2020-03-07','2020-03-20',06),
-							(002,3,100,8,'2020-02-04','2020-02-10',01),
-							(003,1,105,2,'2020-05-10','2020-05-12',04),
-							(004,2,104,9,'2020-05-16','2020-05-20',03),
-							(005,5,102,1,'2020-05-25','2020-05-29',02),
-							(006,2,103,4,'2020-07-02','2020-07-12',04);
-
-
 -- Tạo bảng danh mục sản phẩm( thể loại chính cho từng sản phẩm)
 create table Product_category(
 	id_prodCate int auto_increment primary key,
@@ -184,12 +162,12 @@ CREATE TABLE if not exists discount_product (
 
 
 insert into discount_product values 
-(1010,'Ba Ba',1,'../img/img-product/bebe.jpg','',100000,'2020-1-21',20,1),
-(1011,'Ga Luoc',1,'../img/img-product/galuoc.png','',150000,'2020-03-05',23,1),
-(1012,'Cua Hoang De',1,'../img/img-product/cuahoangde.jpg','',150000,'2020-03-05',23,1),
-(1013,'Ca Mú Hấp',1,'../img/img-product/camuhap.jpg','',700000,'2020-05-11',20,1),
-(1014,'Cá',2,'../img/img-product/car.png','',100000,'2020-05-12',20,1),
-(1015,'Ga Nuong',1,'../img/img-product/ganuong.jpg','',500000,'2020-05-14',40,1);
+(1010,'Ba Ba',1,'../img/img-product/bebe.jpg','',120000,100000,'2020-1-21',20,1),
+(1011,'Ga Luoc',1,'../img/img-product/galuoc.png','',200000,150000,'2020-03-05',23,1),
+(1012,'Cua Hoang De',1,'../img/img-product/cuahoangde.jpg','',200000,150000,'2020-03-05',23,1),
+(1013,'Ca Mú Hấp',1,'../img/img-product/camuhap.jpg','',1000000,700000,'2020-05-11',20,1),
+(1014,'Cá',2,'../img/img-product/car.png','',200000,100000,'2020-05-12',20,1),
+(1015,'Ga Nuong',1,'../img/img-product/ganuong.jpg','',600000,500000,'2020-05-14',40,1);
 
 
 
@@ -222,26 +200,26 @@ select * from rooms;
 -- table for bills:				
 -- -----------------------------	
 
-CREATE TABLE Bills (
-    id_bill INT PRIMARY KEY,
-    id_users INT,
-    Date_of_payment DATE, -- ngày thanh toán
-    total_money DECIMAL(10 , 2 ),
-    id_prod INT,
-    FOREIGN KEY (id_users)
-	REFERENCES users (id_user),
-    FOREIGN KEY (id_prod)
-        REFERENCES products (id_prod)
-);
-insert into Bills values 	(001,105,'2020-01-15',10000000,1010),
-							(002,100,'2020-05-22',14000000,1015),
-                            (003,101,'2020-03-06',20000,1014),
-                            (004,103,'2020-01-15',150000,1010),
-                            (005,102,'2020-01-15',700000,1018),
-                            (006,104,'2020-01-15',500000,1016),
-							(007,109,'2020-01-15',14000000,1012),
-                            (008,107,'2020-01-15',500000,1011),
-                            (009,108,'2020-01-15',600000,1019);
+-- CREATE TABLE Bills (
+--     id_bill INT PRIMARY KEY,
+--     id_users INT,
+--     Date_of_payment DATE, -- ngày thanh toán
+--     total_money DECIMAL(10 , 2 ),
+--     id_prod INT,
+--     FOREIGN KEY (id_users)
+-- 	REFERENCES users (id_user),
+--     FOREIGN KEY (id_prod)
+--         REFERENCES products (id_prod)
+-- );
+-- insert into Bills values 	(001,105,'2020-01-15',10000000,1010),
+-- 							(002,100,'2020-05-22',14000000,1015),
+--                             (003,101,'2020-03-06',20000,1014),
+--                             (004,103,'2020-01-15',150000,1010),
+--                             (005,102,'2020-01-15',700000,1018),
+--                             (006,104,'2020-01-15',500000,1016),
+-- 							(007,109,'2020-01-15',14000000,1012),
+--                             (008,107,'2020-01-15',500000,1011),
+--                             (009,108,'2020-01-15',600000,1019);
 
 
 

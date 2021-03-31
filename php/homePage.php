@@ -21,7 +21,7 @@
     <!-- link  API -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
 
 </head>
 <?php
@@ -39,22 +39,6 @@ require_once('../modal/connect.php')
         margin-left: 20px;
     }
 
-    /* 
-    #info-content {
-
-        position: relative;
-    }
-
-    #info-content fill {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        right: 0;
-        bottom: 0;
-        padding: 0 !important;
-        margin: 0 !important;
-    } */
     .imgright {
         float: left !important;
     }
@@ -118,15 +102,7 @@ require_once('../modal/connect.php')
     <!-- ------------------------ -->
     <!-- ------------------------------ -->
 
-    <!-- <section class="about-section" id="about">
-        <div class="row">
-            <h2>PRODUCT</h2>
-            <br><br><br>
-            <?php
 
-            ?>
-      </div>
-    </section> -->
     <section class="about-section" id="content-section">
         <img src="../img/images_content/15.jpg" / width="200px;">
         <img src="../img/images_content/15.jpg" / width="200px;">
@@ -135,24 +111,129 @@ require_once('../modal/connect.php')
         <img src="../img/images_content/15.jpg" / width="200px;">
 
     </section>
-    <section class="about-section" id="info-content">
-        <p>
-            <img src="../img/img-product/backgroundd.jpg" style="width: 200px; height: auto" class="imgright" />
-            Sun Homes BBQ (Quán thịt nướng Hàn Quốc) sẽ đưa bạn đến Seoul, nơi những con phố bình dị,
-            những quán ăn dân dã đã trở nên quen thuộc và gắn bó với người dân xứ Hàn.
-            Nếu đã một lần thưởng thức thịt nướng tại Sun Homes BBQ, bạn sẽ không thể quên được hương
-            vị “ngất ngây” của những món sườn non bò Mỹ, nạc vai bò Mỹ, dẻ sườn tươi….
-            khi hòa quyện vào với các loại gia vị đặc trưng của xứ sở Kimchi đã trở nên hấp dẫn đến thế nào.
-            Bí quyết của Sun Homes BBQ nằm ở nước sốt tẩm ướp thịt được chế biến từ nguyên liệu hoàn toàn tự nhiên,
-            theo công thức bí truyền, do Bếp Trưởng Park Sung Min hơn 40 năm kinh nghiệm nghiên cứu và chế biến.
-            Sun Homes BBQ có 2 dạng thực đơn để Quý Khách lựa chọn là: Chọn Combo và Gọi Món.
-        </p>       
-           <img src="../img/images_content/15.jpg" / width="200px;" >
-   
-    </section>
 
+    <!-- about us -->
+    <div id="aboutus">
+        <div>
+            <h2 class="title-text">About Us</h2>
+            <section class="about-section" id="info-content">
+        </div>
+        <div class="about-center">
 
+            <article class="aboutus">
+                <div class="about-icon"><i class="fas fa-mug-hot"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Drinks</h2>
+                    <p class="about-info">Từng bừng giải khát</p>
+                </div>
+            </article>
 
+            <article class="aboutus">
+                <div class="about-icon"><i class="fas fa-utensils"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Healthy Food</h2>
+                    <p class="about-info">Thơm ngon từng miếng</p>
+                </div>
+            </article>
+
+            <article class="aboutus">
+                <div class="about-icon"><i class="fas fa-mortar-pestle"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Organic Food</h2>
+                    <p class="about-info">Tất cả chỉ có ở chúng Tôi!</p>
+                </div>
+            </article>
+
+            <article class="aboutus">
+                <div class="about-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">White Meat</h2>
+                    <p class="about-info">Vui là chính!</p>
+                </div>
+            </article>
+
+            <article class="aboutus">
+                <div class="about-icon"><i class="fas fa-fish"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Sea Food</h2>
+                    <p class="about-info">Đủ thể loại món ăn</p>
+                </div>
+            </article>
+
+            <article class="aboutus">
+                <div class="about-icon"><i class="fas fa-pepper-hot "></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Hot & Spicy</h2>
+                    <p class="about-info">Aloxo</p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <!-- our menu -->
+    <div class="menu" id="menu">
+        <article class="menu-image"></article>
+        <article class="menu-text">
+            <div class="menu-text-center">
+                <h1>Our Menu</h1>
+                <p>Kính mời quý khách lựa chọn những món ăn tuyệt vời đến từ nhà hàng chúng tôi.</p>
+                <a href="#">ORDER</a>
+            </div>
+        </article>
+    </div>
+
+    <!--=======-----------Card Section-----====================-->
+    <div id="food">
+        <div>
+            <h2 class="title-text"> Food Fusion</h2>
+        </div>
+        <div class="food-container">
+            <!--======Card Start ----============-->
+            <article class="food-card">
+                <img src="../img/img-product/baba.jpg" class="food-img" alt="">
+                <div class="img-text">
+                    <h1>Breakfast</h1>
+                </div>
+                <div class="img-footer">
+                    <div class="footer-icon">
+                        <i class="fas fa-dollar-sign">25</i>
+                    </div>
+                    <div class="footer-btn">
+                        <button type="button" class="food-btn" onclick="window.location.href='blog-product-break.php'">Order Now</button>
+                    </div>
+                </div>
+            </article>
+            <article class="food-card">
+                <img src="../img/img-product/baba.jpg" class="food-img" alt="">
+                <div class="img-text">
+                    <h1>Lunch</h1>
+                </div>
+                <div class="img-footer">
+                    <div class="footer-icon">
+                        <i class="fas fa-dollar-sign">35</i>
+                    </div>
+                    <div class="footer-btn">
+                        <button type="button" class="food-btn"  onclick="window.location.href='blog-product-break.php'">Order Now</button>
+                    </div>
+                </div>
+            </article>
+            <article class="food-card">
+                <img src="../img/img-product/baba.jpg" class="food-img" alt="">
+                <div class="img-text">
+                    <h1>Dinner</h1>
+                </div>
+                <div class="img-footer">
+                    <div class="footer-icon">
+                        <i class="fas fa-dollar-sign">45</i>
+                    </div>
+                    <div class="footer-btn">
+                        <button type="button" class="food-btn"  onclick="window.location.href='blog-product-break.php'">Order Now</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
 
     <!-- -------------modal SIGN IN - SIGN UP -->
     <!-- ------------------------------------- -->
@@ -217,6 +298,38 @@ require_once('../modal/connect.php')
             </div>
         </div>
     </div>
+    <div id="gallery">
+        <div>
+            <h2 class="title-text">Main Cuisines</h2>
+        </div>
+        <div id="gallery-center">
+            <article class="gallery-item">
+                <video autoplay="autoplay" controls="controls" width="320" height="240">
+                    <source src="../img/video/video1.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+            <article class="gallery-item">
+                <video autoplay="autoplay" controls="controls" width="320" height="240">
+                    <source src="../img/video/video2.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+            <article class="gallery-item">
+                <video autoplay="autoplay" controls="controls" width="320" height="240">
+                    <source src="../img/video/video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+            <article class="gallery-item">
+                <video autoplay="autoplay" controls="controls" width="320" height="240">
+                    <source src="../img/video/video4.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+        </div>
+    </div>
+
     <!-- ----------------------session body------------------ -->
     <section class="customer-section" id="about">
         <h2>CUSTOMER</h2>
@@ -250,35 +363,8 @@ require_once('../modal/connect.php')
             </div>
         </div>
     </section>
-    <section class="about-section" id="about">
-        <div class="row">
-            <h2>About Us</h2>
-            <p class="p-long">
-                Our restaurant builds our brand based on the reputation and reviews from customers. With the slogan of
-                food safety first. We always want to bring the best food to everyone.
-            </p>
-        </div>
-        <!-- <div class="row">
-            <div class="col span-1-of-4 about-picture">
-                <img src="../img/img_member/diem.jpg" alt="activities1" ;>
-                <p class="picture-title">Diem said</p>
 
-            </div>
-            <div class="col span-1-of-4 about-picture">
-                <img src="../img/img_member/quan.jpg" alt="activities2">
-                <p class="picture-title">Quan said</p>
 
-            </div>
-            <div class="col span-1-of-4 about-picture">
-                <img src="../img/img_member/vuong.jpg" alt="activities3">
-                <p class="picture-title">Vuong said</p>
-            </div>
-            <div class="col span-1-of-4 about-picture">
-                <img src="../img/img_member/vi.jpg" alt="activities4">
-                <p class="picture-title">Vĩ said</p>
-            </div> -->
-        </div>
-    </section>
     <!-- -----------------footer------------------- -->
     <!-- -------------------------------------------- -->
     <footer class="bg-light text-center text-lg-start footerHomePage">
@@ -317,12 +403,6 @@ require_once('../modal/connect.php')
         </div>
 
     </footer>
-
-
-
-
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="../js/jquery.waypoints.min.js"></script>
 </body>
