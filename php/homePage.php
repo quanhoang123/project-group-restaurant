@@ -25,7 +25,7 @@
 
 </head>
 <?php
-require_once('../modal/connect.php')
+// require_once('../modal/connect.php')
 ?>
 <style>
     #content-section {
@@ -62,7 +62,7 @@ require_once('../modal/connect.php')
                         </div>
                     </div>
                 </li>
-                <!-- <li>
+                <li>
                     <form>
                         <div class="input-group">
                             <input type="text" id="search" name="find" placeholder="Search"
@@ -73,7 +73,7 @@ require_once('../modal/connect.php')
                             </div>
                         </div>
                     </form>
-                </li> -->
+                </li>
                 <li> <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#exampleModal">Account <i class="fa fa-user"></i></a> </li>
                 <li>
                     <div class="navbar-nav">

@@ -1,12 +1,41 @@
 drop database if exists RESTAURANT_PROJECT;
 create database RESTAURANT_PROJECT;
 use RESTAURANT_PROJECT;
+-- -----------------------------				
+-- table for image:				
+-- -----------------------------	
 
+CREATE table if not exists image_cuss(
+id INT(11) NOT NULL auto_increment primary key,
+name_cus varchar(255) default null,
+image_cus varchar(255)  COLLATE utf8_unicode_ci NOT NULL,
+Note varchar(255) default null
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;	
+ insert into image_cuss value 
+		(1, 'Bat Gioi', '../img/img_customer/batgioi.jpg', 'good'),
+		(2,'Obama','../img/img_customer/obama.jpg', 'good'),
+        (3,'thidiemidol','../img/img_customer/batgioi.jpg', 'good');
+        
+-- -----------------------------				
+-- table for image_slider:				
+-- -----------------------------	
 
+CREATE table if not exists image_slider (
+id INT(11) NOT NULL auto_increment primary key,
+name_slider varchar(255) default null,
+image varchar(255)  COLLATE utf8_unicode_ci NOT NULL,
+note varchar(255) default null
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;	
+
+ insert into image_slider value 
+		(1, 'Good', '../img/interface/backgroundd.jpg', 'Shop Now'),
+		(2,'Good','../img/interface/backgroundd.jpg', 'Shop Now'),
+        (3,'Good','../img/interface/backgroundd.jpg', 'Shop Now');
+        
 -- -----------------------------				
 -- table for admin:				
 -- -----------------------------				
-CREATE TABLE admin (				
+CREATE TABLE  if not exists admin (				
 	id INT(11) NOT NULL,			
 	username VARCHAR(50) DEFAULT NULL,				
 	password VARCHAR(50) DEFAULT NULL,				
@@ -23,7 +52,7 @@ select * from admin;
 -- -----------------------------				
 -- table for employee:				
 -- -----------------------------	
-create table employees(
+create table if not exists employees(
 	id_employee int primary key,
 	name_employee varchar(60),
     gender varchar(5),
@@ -46,7 +75,7 @@ select * from employees;
 -- -----------------------------				
 -- table for user:				
 -- -----------------------------	
-create table users(
+create table if not exists users(
 	id_user int primary key,
     fullname varchar(60),
     user_name varchar(255),
@@ -67,7 +96,7 @@ select * from users;
 -- -----------------------------				
 -- table for carts:				
 -- -----------------------------	
-create table carts(
+create table if not exists carts(
 	id_cart int auto_increment primary key,
     name_product varchar(255) not null,
     price decimal(10,2) not null,
@@ -86,7 +115,7 @@ create table carts(
 -- table for carts:				
 -- -----------------------------	
 -- Tạo bảng danh mục sản phẩm( thể loại chính cho từng sản phẩm)
-create table Product_category(
+create table if not exists Product_category(
 	id_prodCate int auto_increment primary key,
     product_Category_Name varchar(100)
 );
@@ -95,7 +124,7 @@ insert into Product_category values (1,'New Product'),
 									(3,'Product Discount'),
                                     (4,'Room');
 -- Tạo bảng nhà cung cấp
-create table Suppliers(
+create table if not exists Suppliers(
 id_supplier int primary key,
     name_supplier varchar(100),
     address   varchar(100),
@@ -163,26 +192,27 @@ CREATE TABLE if not exists discount_product (
 	FOREIGN KEY (category_id) REFERENCES Product_category(id_prodCate)					
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=34;						
 
-
+-- drop table discount_product;
 
 insert into discount_product values 
-(1010,'Ba Ba',1,'../img/img-product/bebe.jpg','',120000,100000,'2020-1-21',20,1),
+(1010,'Ba Ba',1,'../img/img-product/baba.jpg','',120000,100000,'2020-1-21',20,1),
 (1011,'Ga Luoc',1,'../img/img-product/galuoc.png','',200000,150000,'2020-03-05',23,1),
 (1012,'Cua Hoang De',1,'../img/img-product/cuahoangde.jpg','',200000,150000,'2020-03-05',23,1),
 (1013,'Ca Mú Hấp',1,'../img/img-product/camuhap.jpg','',1000000,700000,'2020-05-11',20,1),
-(1014,'Cá',2,'../img/img-product/car.png','',200000,100000,'2020-05-12',20,1),
+(1014,'Cá',2,'../img/img-product/honhop.jpg','',200000,100000,'2020-05-12',20,1),
 (1015,'Ga Nuong',1,'../img/img-product/ganuong.jpg','',600000,500000,'2020-05-14',40,1);
 
 
 
 -- -----------------------------				
--- table for bills:				
+-- table for rooms:				
 -- -----------------------------
-CREATE TABLE rooms(
+
+CREATE TABLE if not exists rooms(
 	id int(11) NOT NULL AUTO_INCREMENT,					
-	name_product varchar(255) COLLATE utf8_unicode_ci NOT NULL,					
+	name_room varchar(255) COLLATE utf8_unicode_ci NOT NULL,					
 	category_id int(11) NOT NULL,					
-	image varchar(255) COLLATE utf8_unicode_ci NOT NULL,					
+	image_room varchar(255) COLLATE utf8_unicode_ci NOT NULL,					
 	description text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,					
 	price float NOT NULL,											
 	created_day date NOT NULL,					
@@ -199,6 +229,26 @@ INSERT INTO rooms values	(1,'room',4,'../img/img-room/room1.jpg','',100000,'2020
                             (6,'room5',4,'../img/img-room/room6.jpg','',100000,'2020-1-21',20,20);
 
 select * from rooms;
+
+drop table room_interface;
+
+CREATE TABLE if not exists room_interface(
+	id int(11) NOT NULL AUTO_INCREMENT,					
+	room_name varchar(255) COLLATE utf8_unicode_ci NOT NULL,								
+	img_room varchar(255) COLLATE utf8_unicode_ci NOT NULL,					
+	description text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,									
+	PRIMARY KEY (id)								
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=34;
+INSERT INTO room_interface values	(1,'room','../img/img-room/room1.jpg','Good nè'),
+							(2,'room1','../img/img-room/room2.jpg','Good nè'),
+                            (3,'room2','../img/img-room/room3.jpg','Good nè'),
+                            (4,'room3','../img/img-room/room4.jpg','Good nè');
+                           
+
+select * from room_interface;
+
+
+
 
 -- -----------------------------				
 -- table for bills:				
