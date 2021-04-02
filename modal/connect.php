@@ -97,7 +97,7 @@ class database
             // Connect sql
             $this->connect();
         
-            $sql = "SELECT * FROM products WHERE id_product = {$id}";
+            $sql = "SELECT * FROM products WHERE id_product = $id";
             // Create array 
             $result=array();
             $query=mysqli_query($this->conn,$sql);

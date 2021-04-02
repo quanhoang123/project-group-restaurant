@@ -117,27 +117,26 @@
                             <div class="col-md-5">
 
                                 <?php
-                                require_once "../modal//connect.php";
-                                $dt = new database();
-                                $dt->connect();
-                                $id=isset($_GET['id']) ? (int)$_GET['id'] :'';
-                                    if($id){
-                                        $row=$dt->read_product_detail($id);
-                                    }
-                                   
+                                    $data=array();
+                                    require_once "../modal/connect.php";
+                                    $dt = new database();
+                                    $dt->connect();
+                                    $id=isset($_GET['id']) ? (int)$_GET['id'] :'';
+                                        if($id){
+                                            $data=$dt->read_product_detail($id);
+                                        }                                  
                                 ?>
-
                                 <div class="product-slider-single normal-slider">
-                                    <img src="<?php echo $row['image'] ?>" alt="Product Image">
+                                    <img src="<?php  echo $data['image'] ?>" alt="Product Image">
                                 </div>
                                 <div class="product-slider-single-nav normal-slider">
-                                    <div class="slider-nav-img"><img src="<?php echo $row['image'] ?>" alt="Product Image"></div>
+                                    <div class="slider-nav-img"><img src="<?php echo $data['image'] ?>" alt="Product Image"></div>
                                 </div>
                             </div>
                             <div class="col-md-7">
                                 <div class="product-content">
                                     <div class="title">
-                                        <h2><?php echo $row['name_product'] ?></h2>
+                                        <h2><?php echo $data['name_product'] ?></h2>
                                     </div>
                                     <div class="ratting">
                                         <i class="fa fa-star"></i>
@@ -148,7 +147,7 @@
                                     </div>
                                     <div class="price">
                                         <h4>Price:</h4>
-                                        <p>$<?php echo $row['price'] ?> <span>$<?php echo $row['price'] ?></span></p>
+                                        <p>$<?php echo $data['price'] ?> <span>$<?php echo $data['price'] ?></span></p>
                                     </div>
                                     <div class="quantity">
                                         <h4>Quantity:</h4>
@@ -328,13 +327,13 @@
                             require_once "../modal//connect.php";
                             $dt = new database();
                             $dt->connect();
-                            $sql = 'select * from products';
+                            $sql = 'select * from rooms';
                             $getAll = $dt->read_product_break($sql);
-                            foreach ($getAll as $product) {
+                            foreach ($getAll as $room) {
                             ?>
                                 <div class="product-item">
                                     <div class="product-title">
-                                        <a href="#"><?php echo $product['name_product']; ?></a>
+                                        <a href="#"><?php echo $room['name_room']; ?></a>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -345,18 +344,18 @@
                                     </div>
                                     <div class="product-image">
                                         <a href="product-detail.html">
-                                            <img src="<?php echo $product['image'] ?>" alt="Product Image" width="150px;" height="150px">
+                                            <img src="<?php echo $room['image_room'] ?>" alt="Product Image" width="150px;" height="150px">
                                         </a>
                                         <div class="product-action">
                                             <a href="#"><i class="fa fa-shopping-cart"></i></a>
                                             <a href="#"><i class="fa fa-heart"></i></a>
-                                            <a href="product-detail.php?id='". $product['id_product']'"><i class="fa fa-eye"></i></a>
+                                            <a href="product-detail.php?id='". $room['id']'"><i class="fa fa-eye"></i></a>
 
                                         </div>
                                     </div>
                                     <div class="product-price">
                                         <h3></h3>
-                                        <a class="btn float-right" href=""> $<?php echo $product['price'] ?></a>
+                                        <a class="btn float-right" href=""> $<?php echo $room['price'] ?></a>
                                     </div>
                                 </div>
                             <?php } ?>

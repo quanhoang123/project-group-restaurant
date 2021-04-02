@@ -124,9 +124,9 @@ h2 {
 }
 
 .btn {
-    color: #FF6F61;
-    background: #ffffff;
-    border: 1px solid #FF6F61;
+    color: black;
+    background: rgb(187, 228, 4);
+    border: 1px solid #131212;
 }
 
 .btn:hover,
@@ -251,10 +251,11 @@ h2 {
     }
 }
 
-.nav .navbar {
+
+/* .nav .navbar {
     height: 100%;
     padding: 0;
-}
+} */
 
 .nav .dropdown-menu {
     margin-top: 0;

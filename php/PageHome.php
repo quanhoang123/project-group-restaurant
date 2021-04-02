@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="eCommerce HTML Template Free Download" name="keywords">
     <meta content="eCommerce HTML Template Free Download" name="description">
+  
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
@@ -20,46 +21,120 @@
     <!-- Stylesheet -->
     <link href="../css/styleHomPage.css" rel="stylesheet">
 </head>
+<style>
+ 
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
-<body>
-    <!-- Nav Bar Start -->
-    <div class="nav">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
-                <a href="#" class="navbar-brand">MENU</a>
+/* ------------------HEADER------------------ */
+
+
+/* ------------------------------------------------ */
+
+
+body {
+    overflow-x: hidden;
+}
+
+
+.main-nav {  
+    margin-right: 20px;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-right: 5px; 
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid red;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 50%;
+    font-weight: 300px;
+    transition: border-bottom 0.5s;
+}
+
+
+
+
+/* ------sticky----- */
+
+.sticky {
+    background-color: rgba(255, 165, 79, .9);
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.sticky .logo {
+    width: 200px;
+    margin-top: -30px;
+}
+
+.sticky .main-nav {
+    margin-top: 5px;
+}
+
+</style>
+
+<body data-spy="scroll" data-target=".navbar-fixed-top">
+   
+
+    
+    <div class="nav ">
+        <div class="container">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
+            <a href="#" class="navbar-brand">MENU</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
-                   </button>
+                </button>
 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <ul class="main-nav col-sm-6">
                     <div class="navbar-nav mr-auto">
-                        <a href="../php/inde.php" class="nav-item nav-link active">Home</a>
-                        <a href="#" class="nav-item nav-link">Contact</a>
-                        
-                        <a href="#" class="nav-item nav-link">About us</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product</a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">sea foods</a>
-                                <a href="#" class="dropdown-item">jungle foods</a>
+                        <li> <a href="#" class="nav-item nav-link active">Home</a></li>
+                        <li><a href="#" class="nav-item nav-link">Contact</a></li>             
+                        <li><a href="#about-us" class="nav-item nav-link">About us</a></li>
+                        <li>
+                            <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product</a>
+                                    <div class="dropdown-menu">
+                                        <a href="#" class="dropdown-item">sea foods</a>
+                                        <a href="#" class="dropdown-item">jungle foods</a>
+                                    </div>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+                <ul class="main-nav col-sm-3 ">      
+                    <li class="float-right">
+                        <div class="navbar-nav ml-auto ">
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+                                <div class="dropdown-menu">
+                                    <a href="login.html" class="dropdown-item">Login</a>
+                                    <a href="#" class="dropdown-item">Register</a>
+                                </div>
                             </div>
                         </div>
-                        
-                    </div>
-                    <div class="navbar-nav ml-auto">
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
-                            <div class="dropdown-menu">
-                                <a href="login.html" class="dropdown-item">Login</a>
-                                <a href="#" class="dropdown-item">Register</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+                    </li>
+                </ul>
+            </div>           
+        </nav>
         </div>
     </div>
-    <!-- Nav Bar End -->
+   
 
     <!-- Bottom Bar Start -->
     <div class="bottom-bar">
@@ -68,7 +143,7 @@
                 <div class="col-md-3">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="" alt="Logo">
+                            <img src="../img/interface/logoquan.png" alt="Logo" width="50%">
                         </a>
                     </div>
                 </div>
@@ -132,7 +207,7 @@
                 <div class="col-md-6">
                     <div class="header-slider normal-slider">
                     <?php
-                                require_once "../modal//connect.php";
+                                require_once "../modal/connect.php";
                                 $dt = new database();
                                 $dt->connect();
                                 $sql = 'select * from rooms';
@@ -412,7 +487,7 @@
     <!-- Video end -->     
 
     <!-- Footer Start -->
-    <div class="footer">
+    <div class="footer" id="about-us">
         <div class="text-center">
         <h1>ABOUT US</h1>                                     
         </div>
@@ -474,7 +549,10 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/slick/slick.min.js"></script>
 
-                        
+
+
+
+                  
     <script src="../js/main.js"></script>
 </body>
 
