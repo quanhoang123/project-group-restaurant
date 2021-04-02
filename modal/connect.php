@@ -91,6 +91,26 @@ class database
         }
         return $row;
     }
+
+    public function read_product_detail($id){
+
+            // Connect sql
+            $this->connect();
+        
+            $sql = "SELECT * FROM products WHERE id_product = {$id}";
+            // Create array 
+            $result=array();
+            $query=mysqli_query($this->conn,$sql);
+            
+            if(mysqli_num_rows($query)>0){
+                $row=mysqli_fetch_assoc($query);
+                    $result=$row;    
+                
+            }
+          return $result;
+
+          
+    }   
 }
 
 ?>

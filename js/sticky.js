@@ -1,22 +1,22 @@
 $(document).ready(
-    function(){
+    function() {
         // sticky nav
-        $('.about-section').waypoint(
-            function(direction){
-                if(direction == "down"){
+        $('#sticky').waypoint(
+            function(direction) {
+                if (direction == "down") {
                     $('nav').addClass('sticky');
-                }else {
+                } else {
                     $('nav').removeClass('sticky');
                 }
-            },{
+            }, {
                 offset: '600px'
             }
         )
 
         // Scroll
-        $('a').click(function(event){
+        $('a').click(function(event) {
             $('html, body').animate({
-                scrollTop: $( $.attr(this, 'href') ).offset().top
+                scrollTop: $($.attr(this, 'href')).offset().top
             }, 700);
             event.preventDefault();
         });

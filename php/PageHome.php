@@ -8,9 +8,6 @@
     <meta content="eCommerce HTML Template Free Download" name="keywords">
     <meta content="eCommerce HTML Template Free Download" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
 
@@ -20,25 +17,23 @@
     <link href="lib/slick/slick.css" rel="stylesheet">
     <link href="lib/slick/slick-theme.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link href="../css/styleHomPage.css" rel="stylesheet">
 </head>
 
 <body>
-   
-
     <!-- Nav Bar Start -->
     <div class="nav">
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
                 <a href="#" class="navbar-brand">MENU</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
-                    </button>
+                   </button>
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="../php/inde.php" class="nav-item nav-link active">Home</a>
                         <a href="#" class="nav-item nav-link">Contact</a>
                         
                         <a href="#" class="nav-item nav-link">About us</a>
@@ -73,7 +68,7 @@
                 <div class="col-md-3">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="../img/interface/logoquan.png" alt="Logo">
+                            <img src="" alt="Logo">
                         </a>
                     </div>
                 </div>
@@ -85,11 +80,11 @@
                 </div>
                 <div class="col-md-3">
                     <div class="user">
-                        <a href="wishlist.html" class="btn wishlist">
+                        <a href="#" class="btn wishlist">
                             <i class="fa fa-heart"></i>
                             <span>(0)</span>
                         </a>
-                        <a href="cart.html" class="btn cart">
+                        <a href="#" class="btn cart">
                             <i class="fa fa-shopping-cart"></i>
                             <span>(0)</span>
                         </a>
@@ -148,7 +143,7 @@
                             <img src="<?php echo $slider['image_room']?>" alt="Slider Image" width="100%" height="500px;"/>
                             <div class="header-slider-caption">
                                 <p><?php echo $slider['name_room']?></p>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i><?php echo $slider['description']?></a>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i><?php echo $slider['description']?>Shop Now</a>
                             </div>
                         </div>
                     <?php }?>
@@ -157,17 +152,18 @@
                 <div class="col-md-3">
                     <div class="header-img">
                         <div class="img-item">
-                            <img src="../img/img-room/room1.jpg" />
+                            <img src="../img/img-room/room3.jpg" />
                             <a class="img-text" href="">
                                 <p>Sang trọng quý phái</p>
                             </a>
                         </div>
                         <div class="img-item">
-                            <img src="../img/img-room/room2.jpg" />
+                            <img src="../img/img-room/room6.jpg" />
                             <a class="img-text" href="">
                                 <p>Sang trọng quý phái</p>
                             </a>
                         </div>
+                     
                     </div>
                 </div>
             </div>
@@ -177,6 +173,7 @@
 
     <!-- Brand Companies Start -->
     <div class="brand">
+        <div><h1 class="text-center">Our partner</h1></div>
         <div class="container-fluid">
             <div class="brand-slider">
                 <div class="brand-item"><img src="../img/img-brand/axon.png" alt="" width="50%" ></div>
@@ -191,39 +188,10 @@
     </div>
     <!-- Brand End -->
 
-    <!-- Category Start-->
-    <div class="category">
-        <div class="container-fluid">
-            <div class="row">
-            <?php
-                require_once "../modal//connect.php";
-                $dt = new database();
-                $dt->connect();
-                $sql = 'select * from room_interface';
-                $getAll = $dt->read_product_break($sql);
-                foreach ($getAll as $room) {
-            ?>                    
-                <div class="col-md-3">
-                    <div class="category-item ch-400">
-                        <img src="<?php echo $room['img_room']?>" style="margin-left:5px;" />
-                        <a class="category-name" href="">
-                            <p><?php echo $room['room_name']?></p>
-                        </a>
-                    </div>
-                </div>
-            <?php } ?>
-
-            </div>
-        </div>
-    </div>
-    <!-- Category End-->
-
-
-
     <!--  Product Start -->
     <div class="featured-product product">
         <div class="container-fluid">
-            <div class="section-header">
+            <div class="section-header text-center">
                 <h1> Product</h1>
             </div>
             <div class="row align-items-center product-slider product-slider-4">
@@ -253,14 +221,16 @@
                                 <img src="<?php echo $product['image'] ?>" alt="Product Image" width="150px;" height="150px">
                             </a>
                             <div class="product-action">
-                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
                                 <a href="#"><i class="fa fa-heart"></i></a>
-                                <a href="#"><i class="fa fa-search"></i></a>
+                                <?php echo '<a href="product-detail.php?id='. $row['id_product'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                               ?>
                             </div>
                         </div>
                         <div class="product-price">
-                            <h3><span>$</span><?php echo $product['price'] ?></h3>
-                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                        <h3></h3>
+                        <a class="btn " href=""> $<?php echo $product['price'] ?></a>      
+                        <a class="btn float-right" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -314,14 +284,12 @@
             </div>
         </div>
     </div>
-    <!-- Feature End-->                               
-
-
+    <!-- Feature End-->   
 
     <!-- Discount Product Start -->
     <div class="recent-product product">
         <div class="container-fluid">
-            <div class="section-header">
+            <div class="section-header text-center">
                 <h1>Discount Product</h1>
             </div>
             <div class="row align-items-center product-slider product-slider-4">
@@ -351,15 +319,16 @@
                                 <img src="<?php echo $discount['image']?>" alt="Product Image" width="150px;" height="150px">
                             </a>
                             <div class="product-action">
-                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
                                 <a href="#"><i class="fa fa-heart"></i></a>
-                                <a href="#"><i class="fa fa-search"></i></a>
+                                <a href="#"><i class="fa fa-eye"></i></a>
                                
                             </div>
                         </div>
-                        <div class="product-price">          
-                            <a class="btn" href=""> <strike><?php echo $discount['old_price'] ?></strike></a>
-                            <h3><span></span><?php echo $discount['price'] ?></h3>
+                        <div class="product-price">    
+                               
+                            <a class="btn" href=""> <span>$</span><strike><?php echo $discount['old_price'] ?></strike></a>
+                            <a class="btn float-right" href=""> $<?php echo $product['price'] ?></a>         
                         </div>
                     </div>
                 </div>
@@ -371,7 +340,9 @@
 
     <!-- Review Start -->
     <div class="review">
-    <div><h1 class="text-center" >CUSTOMER</h1></div>
+    <div class="section-header">
+            <h1 class="text-center">Customer</h1>
+        </div>
         <div class="container-fluid">
             <div class="row align-items-center review-slider normal-slider">
                 <?php
@@ -409,10 +380,41 @@
     </div>
     <!-- Review End -->
 
+    <!-- Video start -->
+    <div id="gallery">
+        <div class="section-header">
+            <h1 class="title-text text-center">Main Cuisines</h1>
+        </div>
+        <div id="gallery-center">
+            <article class="gallery-item">
+                <video autoplay="autoplay" controls="controls" width="320" height="240">
+                    <source src="../img/video/video1.mp4" type="video/mp4" />                  
+                </video>
+            </article>
+            <article class="gallery-item">
+                <video autoplay="autoplay" controls="controls" width="320" height="240">
+                    <source src="../img/video/video2.mp4" type="video/mp4" />
+                </video>
+            </article>
+            <article class="gallery-item">
+                <video autoplay="autoplay" controls="controls" width="320" height="240">
+                    <source src="../img/video/video.mp4" type="video/mp4" />                  
+                </video>
+            </article>
+            <article class="gallery-item">
+                <video autoplay="autoplay" controls="controls" width="320" height="240">
+                    <source src="../img/video/video4.mp4" type="video/mp4" />
+                </video>
+            </article>
+        </div>
+    </div>
+    
+    <!-- Video end -->     
+
     <!-- Footer Start -->
     <div class="footer">
-        <div class="col-lg-12 text-center">
-        <h3>ABOUT US</h3>                                     
+        <div class="text-center">
+        <h1>ABOUT US</h1>                                     
         </div>
         <div class="row payment align-items-center">
                 <div class="col-md-6">
@@ -473,7 +475,7 @@
     <script src="lib/slick/slick.min.js"></script>
 
                         
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

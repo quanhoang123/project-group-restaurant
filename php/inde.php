@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="menu-item">
-            <li><a href="homePage.php">HomePage</a></li> 
+            <li><a href="PageHome.php">HomePage</a></li> 
             <li><a href="">Aboutus</a></li>  
             <li><a href="">Shopsystem</a></li>  
             <li><a href="">Images</a></li>  
